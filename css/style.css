@@ -115,7 +115,18 @@ body, input {
 .count > div:hover span {
     border-bottom: 1px dashed #a1a1a1;
 }
-
+.quote {
+    position: absolute;
+    top: 120px;
+    color: #f1f1f1;
+    font-size: 16pt;
+    font-style: italic;
+    font-family: serif;
+}
+.quote .author {
+    font-style: normal;
+    font-size: 12pt;
+}
 label {
     display: block;
 }
