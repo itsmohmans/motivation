@@ -33,7 +33,7 @@ $(document).ready(function () {
                 $(`#${unit}`).text(String(timePassed[unit]).padStart(2, '0'))
             })
 
-        }, 1000);
+        }, 100);
         $('#age-template').show();
     }
     const fullDuration = (start = new Date(), end = new Date()) => {
@@ -46,6 +46,7 @@ $(document).ready(function () {
             hours: 0,
             mins: 0,
             secs: 0,
+            ms: 0,
         }
 
         formattedDuration.years = Math.floor(duration / YEAR)
@@ -65,6 +66,8 @@ $(document).ready(function () {
 
         formattedDuration.secs = Math.floor(duration / 1000) % 60
         duration -= formattedDuration.secs * 1000
+
+        formattedDuration.ms = duration
 
         return formattedDuration
 
