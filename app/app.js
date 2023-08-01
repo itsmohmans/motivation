@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    let localStorageData, parsingData;
+    let localStorageData, bd;
 
     localStorageData = localStorage.birthdayDate;
     if (localStorageData) {
@@ -25,7 +25,7 @@ $(document).ready(function () {
     function renderAgeLoop() {
         localStorageData = localStorage.birthdayDate;
         setInterval(function () {
-            parsingData = new Date(parseInt(localStorageData));
+            bd = new Date(parseInt(localStorageData)); // birtdate
             let now = new Date;
             let duration = now - parsingData;
             let years = duration / 31556900000; // 1 year in millisecond
