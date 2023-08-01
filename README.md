@@ -1,6 +1,6 @@
 ExtraMotivation
 ========
-A fork of [Lysak/Motivation](https://github.com/Lysak/motivation) extenstion with all time units instead of just year and fractions for extra ~~anxiety~~ motivation.
+A fork of [Lysak/Motivation](https://github.com/Lysak/motivation) extension with all time units instead of just year and fractions for extra ~~anxiety~~ motivation.
 
 <!-- For Chrome add add-on from [chrome.google.com/webstore](https://chrome.google.com/webstore/detail/motivation/aliachjmgkelibfecomdccomahgpople/ "https://chrome.google.com/webstore/detail/motivation/aliachjmgkelibfecomdccomahgpople/")
 
