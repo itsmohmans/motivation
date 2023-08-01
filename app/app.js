@@ -27,13 +27,13 @@ $(document).ready(function () {
         setInterval(function () {
             bd = new Date(parseInt(localStorageData)); // birtdate
             let now = new Date;
-            let duration = now - parsingData;
-            let years = duration / 31556900000; // 1 year in millisecond
+            const timePassed = fullDuration(bd, now)
 
-            let majorMinor = years.toFixed(9).toString().split('.');
-            $('#year').text(majorMinor[0]);
-            $('#milliseconds').text(majorMinor[1]);
-        }, 100);
+            Object.keys(timePassed).forEach(unit => {
+                $(`#${unit}`).text(String(timePassed[unit]).padStart(2, '0'))
+            })
+
+        }, 1000);
         $('#age-template').show();
     }
     const fullDuration = (start = new Date(), end = new Date()) => {
