@@ -170,6 +170,7 @@ body, input#date {
     border: 1px dotted #a1a1a1;
     padding: 0.75rem;
     border-radius: 0.25rem;
+    color: #f1f1f1;
 }
 #settings .option {
     width: 100%;
