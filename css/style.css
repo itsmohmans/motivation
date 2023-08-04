@@ -138,6 +138,58 @@ body, input#date {
     font-style: normal;
     font-size: 12pt;
 }
+#settings {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    row-gap: 0.5rem;
+}
+#settings button.settings-icon {
+    background-color: unset;
+    border-radius: 999px;
+    font-size: 24pt;
+    transition: background-color 200ms linear;
+}
+#settings button.settings-icon:hover,
+#settings button.settings-icon:focus {
+    background-color: #314c5f;
+}
+#settings button.settings-icon:focus,
+#settings button[type='submit']:focus {
+    border: 1px solid #FFF;
+}
+#settings .options {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    align-items: flex-end;
+    width: 200px;
+    border: 1px dotted #a1a1a1;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+}
+#settings .option {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    font-size: 1rem;
+}
+#settings .option input {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+#settings button[type='submit'] {
+    font-size: 1rem;
+    background-color: #314c5f;
+    transition: background-color 200ms linear;
+}
+#settings button[type='submit']:hover {
+    background-color: #0af;
+}
 label {
     display: block;
 }
