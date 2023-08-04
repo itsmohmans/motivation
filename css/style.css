@@ -93,7 +93,8 @@ body, input#date {
     color: white;
     font-size: 1.2rem;
     line-height: 1;
-    margin: 0 0 0 2px;
+    margin: 0 0 4px 2px;
+    font-weight: 200;
 }
 
 .count {
@@ -125,7 +126,7 @@ body, input#date {
 .count > div:hover span {
     border-bottom: 1px dashed #a1a1a1;
 }
-.quote {
+#quote {
     position: absolute;
     top: 64px;
     color: #f1f1f1;
@@ -133,7 +134,7 @@ body, input#date {
     font-style: italic;
     font-family: serif;
 }
-.quote .author {
+#quote .author {
     font-style: normal;
     font-size: 12pt;
 }
