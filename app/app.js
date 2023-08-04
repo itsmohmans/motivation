@@ -1,6 +1,67 @@
 $(document).ready(function () {
     let localStorageData, bd;
 
+    // show / hide settings
+    let settingsShown = false
+    $('#options-container').hide()
+    $('#settings-icon').on("click", () => {
+        if (settingsShown)
+            $('#options-container').hide()
+        else $('#options-container').show()
+        
+        settingsShown = !settingsShown
+    })
+    
+    // settings values and associated functions
+    const settings = {
+        bd: { // TODO: store birthdate here
+            value: null,
+            apply: null
+        },
+        showQuote: {
+            value: true,
+            apply: () => {
+                settings.showQuote.value = settings.showQuote.value === 'true'
+                if (settings.showQuote.value) {
+                    $('#quote').show();
+                    $('#show-quote').prop('checked').value = true
+                }
+                else {
+                    $('#quote').hide();
+                }
+            },
+            // get value from user
+            get: () => settings.showQuote.value = $('#show-quote').prop('checked')
+        },
+    }
+
+    const setSettings = () => {
+        Object.keys(settings).forEach(key => {
+          if (settings[key].get) settings[key].value = (settings[key].get)()
+          localStorage.setItem(key, settings[key].value)
+          if (settings[key].apply) (settings[key].apply)()
+        })
+    }
+
+    const retrieveSettings = () => {
+        // get settings from local storage, or use default settings if none found
+        Object.keys(localStorage).forEach(key => {
+            if (settings[key] && localStorage.getItem(key)) {
+                settings[key].value = localStorage.getItem(key)
+                if (settings[key].apply) (settings[key].apply)()
+            }
+        })
+    }
+    // retrieve settings on app start
+    retrieveSettings()
+
+    // set settings on clicking 'save' button
+    $('#options-container').on('submit', (e) => {
+      e.preventDefault()
+      setSettings()
+      retrieveSettings()
+    })
+
     localStorageData = localStorage.birthdayDate;
     if (localStorageData) {
         renderAgeLoop();
