@@ -8,7 +8,7 @@ $(document).ready(function () {
         $('#dob-template').show();
     }
 
-    $('form').on('submit', function (e) {
+    $('#dob-template form').on('submit', function (e) {
         e.preventDefault();
 
         let birthdayDate = $(this).find('#date')[0].valueAsDate;
